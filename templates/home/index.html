@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Covid Predictor | Home {% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href='{% static "home/css/style.css" %}'>
+{% endblock style %}
+
+{% block content %}
+<!-- Showcase starts -->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src='{% static "home/images/bannerhome.jpg" %}' class="d-block w-100" alt="banner_home">
+        </div>
+        <div class="showcase">
+            <div class="showcase-text">
+                <h5>Some text that reflects our vision in quotations marks?</h5>
+            </div>
+            <div class="showcase-btn">
+                <a class="showcase-btn-text" href="#">DETECT COVID</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Showcase ends -->
+
+<!-- About section starts -->
+<div class="container">
+    <div class="row about-us">
+        <div class="col">
+            <h1>About US</h1>
+        </div>
+        <div class="col-9">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at leo finibus, consectetur erat id,
+                pulvinar sapien. Fusce nec mi eget libero vehicula ornare nec vel sem. Vestibulum nec ullamcorper velit.
+                Duis sollicitudin nec dui id vestibulum. Mauris leo neque, cursus tincidunt tellus in, malesuada
+                accumsan sem. Praesent pellentesque urna at vulputate dictum. Nam sem nunc, ornare vel fermentum a,
+                vulputate eget est. Nunc tincidunt ante eu mauris volutpat fringilla.
+            </p>
+        </div>
+    </div>
+</div>
+<!-- About section ends -->
+
+<!-- Testimony section starts -->
+<!-- Testimony section ends -->
+{% endblock content %}

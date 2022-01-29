@@ -1,0 +1,46 @@
+.showcase {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  left: 5%;
+  padding-top: 100px;
+  padding-bottom: 350px;
+  text-align: center;
+}
+
+.showcase-text {
+  color: #212121;
+}
+
+.showcase-btn {
+  position: absolute;
+  align-self: center;
+  width: 175px;
+  height: 50px;
+  margin-left: 30%;
+  margin-top: 16px;
+  padding-top: 13px;
+  background: #f6ae2d;
+  box-shadow: 0px 6px 16px 3px rgba(190, 130, 23, 0.15);
+  border-radius: 11px;
+  cursor: pointer;
+}
+
+.showcase-btn-text {
+  color: white;
+  font-weight: bold;
+}
+
+.showcase-btn:hover,
+.showcase-btn:focus {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+.showcase-btn-text:hover {
+  color: white;
+  text-shadow: 2px 2px 5px #f6ae2d;
+}
+
+.about-us {
+  margin: 40px 0px;
+}
