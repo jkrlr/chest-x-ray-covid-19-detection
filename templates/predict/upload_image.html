@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Covid Predictor | Predict Covid-19 {% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href='{% static "predict/css/style.css" %}'>
+{% endblock style %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <form id="upload-form" method='POST' action='' enctype='multipart/form-data'>
+            {% csrf_token %}
+            <span id="upload-btn"><label for="id_image">UPLOAD IMAGE</label></span>
+            <span style="display: none;">{{ form }}</span>
+            <span id="submit-btn"></span>
+        </form>
+    </div>
+    <div id="upload-info">
+        <p>Upload image of Chest X-Ray to predict COVID-19</p>
+    </div>
+    <div id="progress-box" class="not-visible mt-4"></div>
+    <!-- <div id="cancel-box" class="not-visible">
+        <button id="cancel-btn" class="btn btn-danger">Cancel</button>
+    </div> -->
+    <div id="alert-box" class="text-center p-0 p-sm-3" style="margin: auto; max-width: 500px;"></div>
+    <div id="image-box" class="mt-0 mb-5"></div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    let gifUrl = "{% static 'predict/icon/tick.gif' %}"
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src='{% static "predict/js/main.js" %}'></script>
+{% endblock scripts %}
