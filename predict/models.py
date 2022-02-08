@@ -15,6 +15,9 @@ class ChestXRayImage(models.Model):
     image = models.ImageField(
         upload_to=chest_x_ray_image_upload_handler, default='chest_x_ray/None/no_img.jpg')
 
+    def __str__(self):
+        return str(self.pk)
+
 
 # class Predict(models.Model):
 #     pass
