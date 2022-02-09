@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Covid Predictor | Team {% endblock title %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href='{% static "pages/css/team.style.css" %}'>
+{% endblock style %}
+
+{% block content %}
+<div class="team-header d-flex flex-column">
+    <h1 class="text-center heading">Meet The Team</h1>
+    <p class="text-center">Meet our amazing team members & mentors.</p>
+    <div class="team-header-dash"></div>
+</div>
+<div class="container">
+    <!-- Team Member Profile Cards -->
+    <div id="team-cards">
+        <div class="row justify-content-center mb-5 pt-5">
+            <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card">
+                    <img src='{% static "pages/images/anil.jpg" %}' class="card-img rounded-circle"
+                        alt="profile image" />
+                    <div class="card-details">
+                        <div class="name">Dr. Anil Kumar</div>
+                        <span class="designation">Mentor</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card">
+                    <img src='{% static "pages/images/himanshu.jpeg" %}' class="card-img rounded-circle"
+                        alt="profile image" />
+                    <div class="card-details">
+                        <div class="name">Dr. Himanshu Singh</div>
+                        <span class="designation">Mentor</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-5 pt-5">
+            <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card">
+                    <img src='{% static "pages/images/garvit.jpg" %}' class="card-img rounded-circle"
+                        alt="profile image" />
+                    <div class="card-details">
+                        <div class="name">Garvit Gupta</div>
+                        <span class="designation">Team Member</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card">
+                    <img src='{% static "pages/images/kartik.jpeg" %}' class="card-img rounded-circle"
+                        alt="profile image" />
+                    <div class="card-details">
+                        <div class="name">Kartik Singh Chupal</div>
+                        <span class="designation">Team Member</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card">
+                    <img src='{% static "pages/images/Jitendra.jpeg" %}' class="card-img rounded-circle"
+                        alt="profile image" />
+                    <div class="card-details">
+                        <div class="name">Jitendra Kumar</div>
+                        <span class="designation">Team Member</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-5 pt-5">
+            <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card">
+                    <img src='{% static "pages/images/tanishi.jpeg" %}' class="card-img rounded-circle"
+                        alt="profile image" />
+                    <div class="card-details">
+                        <div class="name">Tanishi Gola</div>
+                        <span class="designation">Team Member</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card">
+                    <img src='{% static "pages/images/vikrant.jpeg" %}' class="card-img rounded-circle"
+                        alt="profile image" />
+                    <div class="card-details">
+                        <div class="name">Vikrant Sehra</div>
+                        <span class="designation">Team Member</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
