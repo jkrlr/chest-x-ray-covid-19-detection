@@ -5,6 +5,8 @@ from django.conf import settings
 from .forms import ChestXRayImageForm
 from .models import ChestXRayImage
 
+from research.ml_models import chest_xray_predict
+
 
 def upload_image(request):
     form = ChestXRayImageForm(request.POST or None, request.FILES or None)
@@ -24,5 +26,8 @@ def predict_result(request):
     obj = ChestXRayImage.objects.latest('id')
     img_url = settings.MEDIA_URL + str(obj.image)
 
-    context = {'img_url': img_url}
+    # predict the result of image by ml model
+    probability = chest_xray_predict(img_url)
+
+    context = {'probability': probability}
     return render(request, 'predict/predict_result.html', context)
