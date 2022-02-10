@@ -17,7 +17,3 @@ class ChestXRayImage(models.Model):
 
     def __str__(self):
         return str(self.pk)
-
-
-# class Predict(models.Model):
-#     pass
