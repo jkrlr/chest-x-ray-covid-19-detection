@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('predict/', include('predict.urls')),
+    path('pages/', include('pages.urls')),
 ]
 
 if settings.DEBUG:
