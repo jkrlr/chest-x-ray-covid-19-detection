@@ -24,10 +24,10 @@ def upload_image(request):
 def predict_result(request):
     # print(request.POST.dict().get('image'))
     obj = ChestXRayImage.objects.latest('id')
-    img_url = settings.MEDIA_URL + str(obj.image)
+    # img_url = settings.MEDIA_URL + str(obj.image)
 
     # predict the result of image by ml model
-    probability = chest_xray_predict(img_url)
+    probability = chest_xray_predict(obj)
 
     context = {'probability': probability}
     return render(request, 'predict/predict_result.html', context)
