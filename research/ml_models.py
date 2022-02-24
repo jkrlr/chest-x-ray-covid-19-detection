@@ -87,8 +87,8 @@ class Net(Module):
 def chest_xray_predict(obj):
     img_path = os.path.join(os.path.dirname(
         settings.BASE_DIR), 'chest-x-ray-covid-19-detection', 'media', str(obj.image))
-    print(" path is ", weights_dir)
-    print("image url is ", img_path)
+    # print(" path is ", weights_dir)
+    # print("image url is ", img_path)
     img = imread(img_path)
     img = img/255
     img = resize(img, output_shape=(224, 224, 3),
@@ -110,5 +110,8 @@ def chest_xray_predict(obj):
     softmax = torch.exp(output).cpu()
     prob = list(softmax.detach().numpy())
     prediction = np.argmax(prob, axis=1)
-    print("prediction ", prediction, " proba ", prob)
-    return prediction
+    print("--------------------------------------------------")
+    print(" proba ", prob)
+    print("prediction ", prediction)
+    print("--------------------------------------------------")
+    return prediction[0]

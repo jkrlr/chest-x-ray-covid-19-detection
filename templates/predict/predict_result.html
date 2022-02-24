@@ -4,10 +4,22 @@
 
 {% block title %} Covid Predictor | Predict Covid-19 {% endblock title %}
 
+{% block style %}
+<link rel="stylesheet" type="text/css" href='{% static "predict/css/style.css" %}'>
+{% endblock style %}
+
 {% block content %}
-<div class="container">
-    <div class="d-flex justify-content-center mt-5">
-        <h1>Probability of Covid is: {{probability}}</h1>
-    </div>
+<div class="result-header d-flex flex-column">
+    {% if probability == 0 %}
+    <h1 class="text-center heading">COVID Result: NEGATIVE</h1>
+    <p class="text-center">You are safe. You do not have COVID-19.</p>
+    <div class="result-header-dash"></div>
+    <img src='{% static "predict/icon/doctor-thumbs-up.png" %}' class="result-info-img" alt="Doctor Thumbs Up">
+    {% else %}
+    <h1 class="text-center heading">COVID Result: POSITIVE</h1>
+    <p class="text-center">You have COVID-19. Please quarantine yourself until you recover.</p>
+    <div class="result-header-dash"></div>
+    <img src='{% static "predict/icon/stay-home.jpg" %}' class="result-info-img" alt="Stay Home">
+    {% endif %}
 </div>
 {% endblock content %}
