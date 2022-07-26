@@ -84,10 +84,9 @@ class Net(Module):
 
 # Below function takes uploaded image path and return 0 or 1
 # 0 - for covid -ve , 1 - for covid +ve
-def chest_xray_predict(obj):
-    img_path = os.path.join(os.path.dirname(
-        settings.BASE_DIR), 'chest-x-ray-covid-19-detection', 'media', str(obj.image))
-    # print(" path is ", weights_dir)
+def chest_xray_predict(img_path):
+    # img_path = os.path.join(os.path.dirname(
+    #     settings.BASE_DIR), 'chest-x-ray-covid-19-detection', 'media', str(obj.image))
     # print("image url is ", img_path)
     img = imread(img_path)
     img = img/255
@@ -110,8 +109,8 @@ def chest_xray_predict(obj):
     softmax = torch.exp(output).cpu()
     prob = list(softmax.detach().numpy())
     prediction = np.argmax(prob, axis=1)
-    print("--------------------------------------------------")
-    print(" proba ", prob)
-    print("prediction ", prediction)
-    print("--------------------------------------------------")
+    # print("--------------------------------------------------")
+    # print(" proba ", prob)
+    # print("prediction ", prediction)
+    # print("--------------------------------------------------")
     return prediction[0]
