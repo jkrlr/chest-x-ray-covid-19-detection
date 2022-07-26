@@ -4,10 +4,12 @@ import uuid
 
 
 def chest_x_ray_image_upload_handler(instance, filename):
-    new_filename = str(uuid.uuid1())  # uuid1 -> uuid + timestamp
+    lst = filename.split('.') 
+    print(lst)
+    new_filename = lst[0]+str(uuid.uuid1())  # uuid1 -> uuid + timestamp
     upload_to = 'chest_x_ray'
-    ext = filename.split('.')[-1]
-    filename = '{}.{}'.format(new_filename, ext)
+    filename = '{}.{}'.format(new_filename, lst[1])
+    print(filename,new_filename)
     return os.path.join(upload_to, filename)
 
 
