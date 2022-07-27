@@ -9,14 +9,13 @@ const uploadBtn = document.getElementById("upload-btn");
 const submitBtn = document.getElementById("submit-btn");
 
 const csrf = document.getElementsByName("csrfmiddlewaretoken");
+let img_data;
 
 input.addEventListener("change", () => {
   progressBox.classList.remove("not-visible");
   uploadInfo.classList.add("not-visible");
 
-  const img_data = input.files[0];
-  const url = URL.createObjectURL(img_data);
-
+  img_data = input.files[0];
   const form_data = new FormData();
   form_data.append("csrfmiddlewaretoken", csrf[0].value);
   form_data.append("image", img_data);
@@ -57,7 +56,8 @@ input.addEventListener("change", () => {
         `<p style="display:inline-block;margin: right 5px;">Image uploaded Successfully</p>` +
         `<img src=${gifUrl} alt="Done" style="width: 16px; height: 16px; display:inline-block;">`;
 
-      imageBox.innerHTML = `<img src="${url}" style = "width : 300px; height : auto; object-fit: contain; display: block; margin: 0 auto; padding-top:0px;">`;
+      let img_url = "https://chest-x-ray-covid19-files.s3.amazonaws.com/media/chest_x_ray/" + img_data.name;
+      imageBox.innerHTML = `<img src="${img_url}" style = "width : 300px; height : auto; object-fit: contain; display: block; margin: 0 auto; padding-top:0px;">`;
     },
     error: function (error) {
       console.log(error);
@@ -71,18 +71,3 @@ input.addEventListener("change", () => {
     processData: false,
   });
 });
-
-/* Submit the Form
-$("#upload-form").bind("submit", function (event) {
-  $.ajax({
-    type: $(this).attr("method"),
-    url: $(this).attr("action"),
-    data: {
-      image: $("#id_image").val(),
-      csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
-      action: "post",
-    },
-  });
-  event.preventDefault();
-  return false;
-}); */
